@@ -15,6 +15,10 @@ public class ArrayWizard {
 
         System.out.println(printSum(randomIntegers));
 
+        System.out.println("max : " + findMax(randomIntegers));
+        System.out.println("min : " + findMin(randomIntegers));
+
+
     }
 
     public static ArrayList<Integer> printSum(ArrayList<Integer> randomInput){
@@ -36,6 +40,39 @@ public class ArrayWizard {
         randomIntegers2.add(even);
 
         return randomIntegers2;
+    }
+
+
+    public static int findMax (ArrayList <Integer> givenList){
+        
+        //defining temporary max value 
+        int max = givenList.get(0);
+
+        for(int m = 0 ; m < givenList.size() ; m++ ){
+
+            if(givenList.get(m) > max){
+                max = givenList.get(m);
+            }
+        }
+        
+        return max;
+
+    }
+    
+    public static int findMin (ArrayList <Integer> givenList){
+
+        int min = givenList.get(0);
+
+        for (int i = 0 ; i < givenList.size() ; i++){
+
+            if(givenList.get(i) < min){
+                
+                min = givenList.get(i); 
+            }
+
+        }
+        return min;
+
     }
 
     
