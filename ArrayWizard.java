@@ -74,6 +74,27 @@ public class ArrayWizard {
         return min;
 
     }
+     
+    
+    public static ArrayList<Double> averageDifference (ArrayList<Integer> arr1){
+        double average;
+        double sum = 0;
+        ArrayList<Double> arr2 = new ArrayList<Double>();
+
+        for(int i = 0; i < arr1.size(); i++){
+            sum += arr1.get(i);
+        }
+
+        average = sum / arr1.size();
+
+        for(int j = 0; j < arr1.size(); j++){
+            double difference = arr1.get(j) - average;
+            arr2.add(difference);
+        }
+
+        return arr2;
+    
+    }
 
     
 }
