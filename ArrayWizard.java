@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * ArrayWizard
@@ -20,7 +21,20 @@ public class ArrayWizard {
 
 
     }
+    public static ArrayList<Integer> createList(int size){;
 
+        ArrayList<Integer> list = new ArrayList<>();
+
+        Random randomize = new Random();
+
+        for(int i = 0; i< size; i++){
+
+        int number = randomize.nextInt(101);
+
+        list.add(number);
+        }
+        return list;
+    }
     public static ArrayList<Integer> printSum(ArrayList<Integer> randomInput){
 
         int even = 0;
