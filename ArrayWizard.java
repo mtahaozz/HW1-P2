@@ -7,31 +7,31 @@ import java.util.Random;
 public class ArrayWizard {
 
     public static void main(String[] args) {
-        ArrayList<Integer> randomIntegers = new ArrayList<Integer>();
+        Integer[] randomIntegers = new Integer[4] ;
 
-        randomIntegers.add(2);
-        randomIntegers.add(1);
-        randomIntegers.add(3);
-        randomIntegers.add(31);
+        randomIntegers[0] = 2;
+        randomIntegers[1] = 1;
+        randomIntegers[2] = 3;
+        randomIntegers[3] = 31;
 
-        System.out.println(printSum(randomIntegers));
+        //System.out.println(printSum(randomIntegers));
 
         System.out.println("max : " + findMax(randomIntegers));
         System.out.println("min : " + findMin(randomIntegers));
 
 
     }
-    public static ArrayList<Integer> createList(int size){;
-
-        ArrayList<Integer> list = new ArrayList<>();
-
+    public static int[] createArray(int size){
+            
+        int[] list = new int[size];
+        
         Random randomize = new Random();
-
-        for(int i = 0; i< size; i++){
+        
+        for(int i = 0; i< list.length; i++){
 
         int number = randomize.nextInt(101);
 
-        list.add(number);
+        list[i] = number;
         }
         return list;
     }
@@ -40,32 +40,33 @@ public class ArrayWizard {
         int even = 0;
         int odd = 0;
 
-        ArrayList<Integer> randomIntegers2 = new ArrayList<Integer>();
+        Integer[] randomIntegers2 = new Integer[2] ;
 
-        for(int i = 0; i < randomInput.size(); i++){
+        for(int i = 0; i < randomInput.length; i++){
             if(i % 2 == 0){
-                even += randomInput.get(i);
+                even += randomInput[i];
             }else{
-                odd += randomInput.get(i);
+                odd += randomInput[i];
             }
         }
 
-        randomIntegers2.add(odd);
-        randomIntegers2.add(even);
+        randomIntegers2[0] = odd;
+        randomIntegers2[1] = even;
 
         return randomIntegers2;
     }
 
 
-    public static int findMax (ArrayList <Integer> givenList){
+
+    public static int findMax (Integer[] givenArray){
         
         //defining temporary max value 
-        int max = givenList.get(0);
+        int max = givenArray[0];
 
-        for(int m = 0 ; m < givenList.size() ; m++ ){
+        for(int m = 0 ; m < givenArray.length ; m++ ){
 
-            if(givenList.get(m) > max){
-                max = givenList.get(m);
+            if(givenArray[m] > max){
+                max = givenArray[m];
             }
         }
         
@@ -73,15 +74,15 @@ public class ArrayWizard {
 
     }
     
-    public static int findMin (ArrayList <Integer> givenList){
+    public static int findMin (Integer[] givenArray){
 
-        int min = givenList.get(0);
+        int min = givenArray[0];
 
-        for (int i = 0 ; i < givenList.size() ; i++){
+        for (int i = 0 ; i < givenArray.length ; i++){
 
-            if(givenList.get(i) < min){
+            if(givenArray[i] < min){
                 
-                min = givenList.get(i); 
+                min = givenArray[i]; 
             }
 
         }
@@ -90,20 +91,20 @@ public class ArrayWizard {
     }
      
     
-    public static ArrayList<Double> averageDifference (ArrayList<Integer> arr1){
+    public static Double[] averageDifference (Integer[] arr1){
         double average;
         double sum = 0;
-        ArrayList<Double> arr2 = new ArrayList<Double>();
+        Double[] arr2 = new Double[arr1.length];
 
-        for(int i = 0; i < arr1.size(); i++){
-            sum += arr1.get(i);
+        for(int i = 0; i < arr1.length; i++){
+            sum += arr1[i];
         }
 
-        average = sum / arr1.size();
+        average = sum / arr1.length;
 
-        for(int j = 0; j < arr1.size(); j++){
-            double difference = arr1.get(j) - average;
-            arr2.add(difference);
+        for(int j = 0; j < arr1.length; j++){
+            double difference = arr1[j] - average;
+            arr2[j] = difference;
         }
 
         return arr2;
