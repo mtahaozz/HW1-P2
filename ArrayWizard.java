@@ -21,26 +21,27 @@ public class ArrayWizard {
 
     }
 
-    public static ArrayList<Integer> printSum(ArrayList<Integer> randomInput){
+    public static Integer[] getSumOfEvenAndOdds(Integer[] randomInput){
 
         int even = 0;
         int odd = 0;
 
-        ArrayList<Integer> randomIntegers2 = new ArrayList<Integer>();
+        Integer[] randomIntegers2 = new Integer[2] ;
 
-        for(int i = 0; i < randomInput.size(); i++){
+        for(int i = 0; i < randomInput.length; i++){
             if(i % 2 == 0){
-                even += randomInput.get(i);
+                even += randomInput[i];
             }else{
-                odd += randomInput.get(i);
+                odd += randomInput[i];
             }
         }
 
-        randomIntegers2.add(odd);
-        randomIntegers2.add(even);
+        randomIntegers2[0] = odd;
+        randomIntegers2[1] = even;
 
         return randomIntegers2;
     }
+
 
 
     public static int findMax (Integer[] givenArray){
