@@ -77,20 +77,20 @@ public class ArrayWizard {
     }
      
     
-    public static ArrayList<Double> averageDifference (ArrayList<Integer> arr1){
+    public static Double[] averageDifference (Integer[] arr1){
         double average;
         double sum = 0;
-        ArrayList<Double> arr2 = new ArrayList<Double>();
+        Double[] arr2 = new Double[arr1.length];
 
-        for(int i = 0; i < arr1.size(); i++){
-            sum += arr1.get(i);
+        for(int i = 0; i < arr1.length; i++){
+            sum += arr1[i];
         }
 
-        average = sum / arr1.size();
+        average = sum / arr1.length;
 
-        for(int j = 0; j < arr1.size(); j++){
-            double difference = arr1.get(j) - average;
-            arr2.add(difference);
+        for(int j = 0; j < arr1.length; j++){
+            double difference = arr1[j] - average;
+            arr2[j] = difference;
         }
 
         return arr2;
