@@ -1,3 +1,4 @@
+package HW1P2;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -21,9 +22,9 @@ public class ArrayWizard {
 
 
     }
-    public static int[] createArray(int size){
+    public static Integer[] createArray(int size){
             
-        int[] list = new int[size];
+        Integer[] list = new Integer[size];
         
         Random randomize = new Random();
         
