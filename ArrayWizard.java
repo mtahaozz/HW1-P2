@@ -6,14 +6,14 @@ import java.util.ArrayList;
 public class ArrayWizard {
 
     public static void main(String[] args) {
-        ArrayList<Integer> randomIntegers = new ArrayList<Integer>();
+        Integer[] randomIntegers = new Integer[4] ;
 
-        randomIntegers.add(2);
-        randomIntegers.add(1);
-        randomIntegers.add(3);
-        randomIntegers.add(31);
+        randomIntegers[0] = 2;
+        randomIntegers[1] = 1;
+        randomIntegers[2] = 3;
+        randomIntegers[3] = 31;
 
-        System.out.println(printSum(randomIntegers));
+        //System.out.println(printSum(randomIntegers));
 
         System.out.println("max : " + findMax(randomIntegers));
         System.out.println("min : " + findMin(randomIntegers));
@@ -43,15 +43,15 @@ public class ArrayWizard {
     }
 
 
-    public static int findMax (ArrayList <Integer> givenList){
+    public static int findMax (Integer[] givenArray){
         
         //defining temporary max value 
-        int max = givenList.get(0);
+        int max = givenArray[0];
 
-        for(int m = 0 ; m < givenList.size() ; m++ ){
+        for(int m = 0 ; m < givenArray.length ; m++ ){
 
-            if(givenList.get(m) > max){
-                max = givenList.get(m);
+            if(givenArray[m] > max){
+                max = givenArray[m];
             }
         }
         
@@ -59,15 +59,15 @@ public class ArrayWizard {
 
     }
     
-    public static int findMin (ArrayList <Integer> givenList){
+    public static int findMin (Integer[] givenArray){
 
-        int min = givenList.get(0);
+        int min = givenArray[0];
 
-        for (int i = 0 ; i < givenList.size() ; i++){
+        for (int i = 0 ; i < givenArray.length ; i++){
 
-            if(givenList.get(i) < min){
+            if(givenArray[i] < min){
                 
-                min = givenList.get(i); 
+                min = givenArray[i]; 
             }
 
         }
